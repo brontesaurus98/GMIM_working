@@ -1,12 +1,9 @@
 # GMIM: Genome-wide multi-track integrator using minimum Bayes' Factor
-GMIM is a Java-based tool that integrate multiple genome-wide NGS data via the minimum Bayes' Factor from density of sequence reads mapped on the genome. To integrate multiple NGS data, homo-technique replicates or hetero-technique NGS data can be integrated into the single data track based on the complements of the minimum Bayes factor (*cMBF*) (range: 0-1) calculated from signal-to-background ratios as a function of genomic position. 
+GMIM is a Java-based tool that integrates multiple genome-wide NGS data via the minimum Bayes' Factor from density of sequence reads mapped on the genome. To integrate multiple NGS data, homo-technique replicates or hetero-technique NGS data can be integrated into the single data track based on the complements of the minimum Bayes factor (*cMBF*) (range: 0-1) calculated from signal-to-background ratios as a function of genomic position. 
 
 This is **NOT** a peak-calling algorithm as it does not specifically locate peaks (though you can use a peak-calling tools on the output!). 
 
-### MBF Background
-The minimum Bayes factor ............
-
-## Part 1: Calcualation of the complement of minimum Bayes' Factor
+## Part 1: Calculation of the complement of minimum Bayes' Factor
 The first GMIM program **calculates** the cMBF for each position for later integration. It first splits a given genome/chromosome file into a directory of separate chromosomes to facilitate parallelizing computation. For each chromosome file, the program uses a "moving window" to calculate the cMBF. 
 
 ### Input file
@@ -45,7 +42,8 @@ The inputs should be ordered as follows:
 `chr start end cMBF`
 
 ### Run
-`java [Integration_Output_File_Name.bedGraph] [file1.bedGraph] [file2.bedGraph] ...`
+`java Integration.class [Integration_Output_File_Name.bedGraph] [file1.bedGraph] [file2.bedGraph] ...`
+**TODO**
 
 ### Output
 The output will be a bedGraph file of the same format (`chr start end cMBF`) and of the specified name. 
@@ -53,6 +51,7 @@ The output will be a bedGraph file of the same format (`chr start end cMBF`) and
 
 
 ## Example Run(s)
+
 
 ## Things to Consider
 - Window size: Larger is more accurate, but will take longer - 10K bp window takes about an hour with 16 threads and 16 GB free (*should I put this here*)
