@@ -1,4 +1,4 @@
-
+package wGSepPar_CLI;
 
 import java.io.File;
 import java.io.PrintWriter;
@@ -49,7 +49,7 @@ public class ProcessChromFile implements Callable<File> {
 		}
 		
 		String outFileName = "";
-		String chromFileName = chromFile.getName().substring(0, chromFile.getName().length() - 4); //remove '.bed'
+		String chromFileName = chromFile.getName().substring(0, chromFile.getName().length() - 4);
 		
 		if (outBaseName == null) {
 			outFileName = "out_" + chromFileName;

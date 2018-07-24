@@ -1,4 +1,4 @@
-
+package wGSepPar_CLI;
 import java.util.ArrayList;
 
 public class IntWindow_WGSep {
@@ -120,7 +120,6 @@ public class IntWindow_WGSep {
 		return winRA.add(ps);
 	}
 
-	@SuppressWarnings("unused")
 	private double calcMean() { //used in place of Z
 		double sum = 0;
 		int count = 0;
