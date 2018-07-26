@@ -1,5 +1,5 @@
 # GMIM: Genome-wide multi-track integrator using minimum Bayes' Factor
-GMIM is a Java-based tool that integrates multiple genome-wide NGS data via the minimum Bayes' Factor from density of sequence reads mapped on the genome. To integrate multiple NGS data, homo-technique replicates or hetero-technique NGS data can be integrated into the single data track based on the complements of the minimum Bayes factor (*cMBF*) (range: 0-1) calculated from signal-to-background ratios as a function of genomic position. 
+GMIM is a Java-based tool that integrates multiple genome-wide NGS data via the minimum Bayes' Factor from density of sequence reads mapped on the genome. To integrate multiple NGS data, homo-technique replicates or hetero-technique NGS data can be integrated into the single data track based on the complements of the minimum Bayes factor (*cMBF*) (*cMBF = 1 - exp(-Z^2/2)*) (range: 0-1) calculated from signal-to-background ratios as a function of genomic position. 
 
 This is **NOT** a peak-calling algorithm as it does not specifically locate peaks (though you can use a peak-calling tools on the output!). 
 
@@ -23,7 +23,7 @@ The commandline options for changing the parameters are as below:
 ```
 
 ### Run
-`java -jar Driver.jar -i [Input.bed] -w 10000 [other options]`
+`java -jar Driver.jar -i [Input.bed] -w [10000] [other options]`
 
 ### Output
 This part produces a directory of chromosome bedGraph files with the calculated cMBFs. 
@@ -36,14 +36,11 @@ The directory also includes a final bedGraph file that concatenates all chromoso
 The second part of the GMIM program **integrates** the calculated cMBFs for the different tracks by multiplying the cMBF at each position. 
 
 ### Input file
-Inputs should be Part One generated files, or have the same format (`chr start end cMBF`). 
+Inputs should be Part One generated files, or have the same format (ordered as `chr start end cMBF`). 
 An output filename also needs to included as the **first** input. 
-The inputs should be ordered as follows:
-`chr start end cMBF`
 
 ### Run
-`java Integration.class [Integration_Output_File_Name.bedGraph] [file1.bedGraph] [file2.bedGraph] ...`
-**TODO**
+`java Integration.class [Integration_Output_File_Name.bedGraph] [file1.bedGraph] [file2.bedGraph]`
 
 ### Output
 The output will be a bedGraph file of the same format (`chr start end cMBF`) and of the specified name. 
@@ -58,4 +55,5 @@ The output will be a bedGraph file of the same format (`chr start end cMBF`) and
 - Median multiple: Generally, a larger median multiple will reduce the background level, but may also reduce signal. (*Find a browser to show*)
 - Default zero: (*same as above?*)
 - If you have multiple separated regions of the same chromosome, please place them into separate files to run the Driver (Part One). 
+- Running GMIM when low on space may cause errors such as improper file reading (`Improper file formatting`).
 
