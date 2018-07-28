@@ -4,7 +4,7 @@ GMIM is a Java-based commandline tool that integrates multiple genome-wide NGS d
 This is **NOT** a peak-calling algorithm as it does not specifically locate peaks (though you can use a peak-calling tools on the output!). 
 
 ### Installation
-You can download the .jar file from the Epithelial Systems Biology Laboratory website [here](https://esbl.nhlbi.nih.gov/Bioinformatic%20Tools.htm). Move it to your working folder, and follow the run steps below!
+You can download the .jar file from the Epithelial Systems Biology Laboratory website [here](https://esbl.nhlbi.nih.gov/Bioinformatic%20Tools.htm). Move the .jar file to your working folder, and follow the run steps below!
 
 **Requires: Java 1.7**
 
