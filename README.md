@@ -1,5 +1,5 @@
 # GMIM: Genome-wide multi-track integrator using minimum Bayes' Factor
-GMIM is a Java-based commandline tool that integrates multiple genome-wide NGS data via the minimum Bayes' Factor from density of sequence reads mapped on the genome. To integrate multiple NGS data, homo-technique replicates or hetero-technique NGS data can be integrated into the single data track based on the complements of the minimum Bayes factor (*cMBF*) (*cMBF = 1 - exp(-Z^2/2)*) (range: 0-1) calculated from signal-to-background ratios as a function of genomic position. 
+GMIM is a Java-based commandline tool that integrates multiple genome-wide NGS data via the minimum Bayes' Factor from density of sequence reads mapped on the genome. To integrate multiple NGS data, homo-technique replicates or hetero-technique NGS data can be integrated into the single data track based on the complements of the minimum Bayes' factor (*cMBF*) (*cMBF = 1 - exp(-Z^2/2)*) (range: 0-1) calculated from signal-to-background ratios as a function of genomic position. 
 
 This is **NOT** a peak-calling algorithm as it does not specifically locate peaks (though you can use a peak-calling tools on the output!). 
 
